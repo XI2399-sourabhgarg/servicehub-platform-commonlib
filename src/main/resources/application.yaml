@@ -1,0 +1,177 @@
+spring:
+  application:
+    name: Unobank Servicehub System Mambu
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  kafka:
+    bootstrap-servers: localhost:9092
+    #client-id: servicehub-system-mambu
+    security:
+      protocol: SSL
+    topicOne:
+      name: transaction_log
+      noOfPartitions: 1
+      replicationFactor: 1
+    topicTwo:
+      name: fund_transfer
+      noOfPartitions: 1
+      replicationFactor: 1
+
+app:
+  name: servicehub-system-mambu
+server:
+  port: '9091'
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+mambu-api:
+  auth:
+    protocol: https
+    host: api.dev.ph.unobank.asia
+    port: '80'
+    path: /remote-token/token
+    grant-type: client_credentials
+    client-id: AA8bJuRa4l0gK71XnfdMmKVXndaCoWYoXFeILmXTi2gT6N8v
+    client-secret: wQpjpMeThK8Q96wgsM7GLt5nVN0gTHjni7LmfKVD2AeGx8jjdWW5UEffqTQjOGgK
+  mambu:
+    protocol: https
+    host: api-int.dev.ph.unobank.asia
+    port: '80'
+    path: /api/
+  taxapi:
+    percentage: '7'
+    glCreditAccno: '1101101000'
+    glDebitAccno: '1010101000'
+    dstGlCreditAccno: '1101001000'
+    dstGlDebitAccno: '6041101000'
+  create-task:
+    api:
+      assigned-user:
+        key: 8a8e86677c6ac252017c732a25d2000a
+      sla:
+        day: '3'
+brankas-api:
+  uri:
+    protocol: https
+    host: api-int.dev.ph.unobank.asia
+    path: /api/v2/
+  api-key: AA8bJuRa4l0gK71XnfdMmKVXndaCoWYoXFeILmXTi2gT6N8v
+  sourceAccountId: d471f201-b55a-4cfe-af9a-bfb99bda0c54
+bayad-api:
+  uri:
+    protocol: https
+    host: api-int.dev.ph.unobank.asia
+    port: '80'
+    path: /api/v2/billPayments/billers/
+  callbackURL:
+
+channelEntries:
+  channelCode:
+    PayGate:
+      suspenseGlAccount: '1101101000'
+      nostroPartnerGlAccount: '1010101000'
+    cash:
+      suspenseGlAccount: '1101101000'
+      nostroPartnerGlAccount: '1010101000'
+    demo:
+      suspenseGlAccount: '1101101000'
+      nostroPartnerGlAccount: '1101101000'
+    BRANKAS_BDO_OFT_CR:
+      suspenseGlAccount: '1010506000'
+      nostroPartnerGlAccount: '1010407000'
+    BRANKAS_BPI_OFT_CR:
+      suspenseGlAccount: '1010507000'
+      nostroPartnerGlAccount: '1010408000'
+    BRANKAS_PNB_OFT_CR:
+      suspenseGlAccount: '1010508000'
+      nostroPartnerGlAccount: '1010409000'
+    BRANKAS_UBP_OFT_CR:
+      suspenseGlAccount: '1010509000'
+      nostroPartnerGlAccount: '1010410000'
+    BRANKAS_MBTC_OFT_CR:
+      suspenseGlAccount: '1010510000'
+      nostroPartnerGlAccount: '1010411000'
+    BRANKAS_RCBC_OFT_CR:
+      suspenseGlAccount: '1010511000'
+      nostroPartnerGlAccount: '1010412000'
+    BRANKAS_OFT_DR:
+      suspenseGlAccount: '2020701000'
+      nostroPartnerGlAccount: '1010406000'
+    PAYNAMICS_OTC_CR:
+      suspenseGlAccount: '2020702000'
+      nostroPartnerGlAccount: '1010413000'
+    PAYNAMICS_OTC_DR:
+      suspenseGlAccount: '2020702000'
+      nostroPartnerGlAccount: '1010414000'
+    BAYAD_BILLPAY:
+      suspenseGlAccount: '2020706000'
+      nostroPartnerGlAccount: '1010415000'
+    BRANKAS-BDO-OFT-CR:
+      suspenseGlAccount: '1010506000'
+      nostroPartnerGlAccount: '1010407000'
+    BRANKAS-BPI-OFT-CR:
+      suspenseGlAccount: '1010507000'
+      nostroPartnerGlAccount: '1010408000'
+    BRANKAS-PNB-OFT-CR:
+      suspenseGlAccount: '1010508000'
+      nostroPartnerGlAccount: '1010409000'
+    BRANKAS-UBP-OFT-CR:
+      suspenseGlAccount: '1010509000'
+      nostroPartnerGlAccount: '1010410000'
+    BRANKAS-MBTC-OFT-CR:
+      suspenseGlAccount: '1010510000'
+      nostroPartnerGlAccount: '1010411000'
+    BRANKAS-RCBC-OFT-CR:
+      suspenseGlAccount: '1010511000'
+      nostroPartnerGlAccount: '1010412000'
+    BRANKAS-OFT-DR:
+      suspenseGlAccount: '2020701000'
+      nostroPartnerGlAccount: '1010406000'
+    PAYNAMICS-OTC-CR:
+      suspenseGlAccount: '2020702000'
+      nostroPartnerGlAccount: '1010413000'
+    PAYNAMICS-OTC-DR:
+      suspenseGlAccount: '2020702000'
+      nostroPartnerGlAccount: '1010414000'
+    BAYAD-BILLPAY:
+      suspenseGlAccount: '2020706000'
+      nostroPartnerGlAccount: '1010415000'
+dstCalc:
+  parameters:
+    paramOne: 1.5
+    paramTwo: 200
+debitCard:
+  eligibilty:
+    amount: 100
+
+infobip-api:
+  uri:
+    protocol: https
+    host: api-int.dev.ph.unobank.asia
+    path: /api/v1/
+hps-api:
+  uri:
+    protocol: https
+    host: api-int.dev.ph.unobank.asia
+    path: /PowerCardConnectApi/rest/
+
+consumer:
+  transactionGroupId: transaction_management
+  fundTransferGroupId: fund_transfer
+
+application:
+  transactionLog:
+    enabled: false
+
+
+
+
+
+
+
+
+
+

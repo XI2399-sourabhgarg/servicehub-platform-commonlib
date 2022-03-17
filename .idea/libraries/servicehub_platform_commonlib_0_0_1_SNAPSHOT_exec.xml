@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="servicehub-platform-commonlib-0.0.1-SNAPSHOT-exec">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/servicehub-platform-commonlib-0.0.1-SNAPSHOT-exec.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
