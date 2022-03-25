@@ -70,4 +70,8 @@ public class ApplicationUtil {
         }
     }
 
+    public static Double roundOffTo2DecPlaces(Double val) {
+        return Double.parseDouble(String.format("%.2f", val));
+    }
+
 }
