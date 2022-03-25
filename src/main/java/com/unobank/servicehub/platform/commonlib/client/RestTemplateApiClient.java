@@ -14,11 +14,13 @@ import java.net.URI;
 public class RestTemplateApiClient implements ApiClient  {
 
 
+    private final RestTemplate disableRestTemplate;
 
     private final RestTemplate sslDisableRestTemplate;
 
-    public RestTemplateApiClient(RestTemplate sslDisableRestTemplate) {
+    public RestTemplateApiClient(RestTemplate sslDisableRestTemplate, RestTemplate disableRestTemplate) {
         this.sslDisableRestTemplate = sslDisableRestTemplate;
+        this.disableRestTemplate = disableRestTemplate;
     }
 
     @Override
@@ -39,6 +41,17 @@ public class RestTemplateApiClient implements ApiClient  {
                 .toUri();
 
         return sslDisableRestTemplate.postForObject(builder,requestObject, rClasss);
+    }
+
+    @Override
+    public <R> R postOperationWithoutIdempotencyKey(URI uri, Object requestObject, Class<R> rClasss, String baseUrl) {
+        URI builder = UriComponentsBuilder.fromHttpUrl(baseUrl)
+                .path(uri.getPath())
+                .query(uri.getQuery())
+                .build()
+                .toUri();
+
+        return disableRestTemplate.postForObject(builder,requestObject, rClasss);
     }
 
     @Override

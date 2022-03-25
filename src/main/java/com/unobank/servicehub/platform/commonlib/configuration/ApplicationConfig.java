@@ -41,7 +41,7 @@ public class ApplicationConfig {
 
   @Bean
   public ApiClient client() throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
-    return new RestTemplateApiClient(sslDisableRestTemplate());
+    return new RestTemplateApiClient(sslDisableRestTemplate(),disableRestTemplate());
   }
 
   @Bean

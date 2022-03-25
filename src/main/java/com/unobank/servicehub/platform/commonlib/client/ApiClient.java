@@ -13,6 +13,8 @@ public interface ApiClient {
 
    <R> R postOperation(URI postUri, Object requestObject, Class<R> rClasss, String baseUrl);
 
+   <R> R postOperationWithoutIdempotencyKey(URI postUri, Object requestObject, Class<R> rClasss, String baseUrl);
+
    <R> R  getOperationById(URI uri, String id, HttpEntity<?> entity, Class<R> rclass, String baseUrl);
 
    <R> R postOperationById(URI postUri, Object requestObject, String id, Class<R> rClasss, String baseUrl);
