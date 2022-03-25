@@ -27,7 +27,7 @@ public class RequestHeaderInterceptor implements HandlerInterceptor, ClientHttpR
     @Override
     public boolean preHandle(
             HttpServletRequest request, HttpServletResponse response, Object handler) {
-        if (StringUtils.isBlank(request.getHeader(MambuConstants.IDEMPOTENCY_KEY))) {
+        if (StringUtils.isBlank(request.getHeader(MambuConstants.IDEMPOTENCY_KEY)) && StringUtils.isBlank(request.getHeader(MambuConstants.IDEMPOTENCY_KEY))) {
             throw new InvalidHeaderFieldException(
                     MessageFormat.format(
                             "Invalid Request : {0} is not part of request headers",
@@ -48,7 +48,7 @@ public class RequestHeaderInterceptor implements HandlerInterceptor, ClientHttpR
 
     @Override
     public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
-        if (StringUtils.isNotBlank(headerName))
+        if (StringUtils.isNotBlank(headerValue))
             request.getHeaders().set(headerName, headerValue);
         return execution.execute(request, body);
     }

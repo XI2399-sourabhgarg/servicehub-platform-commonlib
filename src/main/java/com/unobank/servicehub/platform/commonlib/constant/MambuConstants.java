@@ -41,6 +41,7 @@ public class MambuConstants {
     public static final String MATURITY_DEPOSIT = "Maturity Deposit";
     public static final String CORRELATION_ID_HEADER_NAME = "X-Correlation-Id";
     public static final String CORRELATION_ID_LOG_VAR_NAME = "correlationId";
+    public static final String IDEMPOTENCY_KEY_NEEDED = "true";
 
     private MambuConstants() {
     }
