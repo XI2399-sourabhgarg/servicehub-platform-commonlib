@@ -10,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.File;
 import java.io.IOException;
 import java.text.MessageFormat;
+import java.util.List;
 
 /** @author ankur.goel */
 public class CommonParser {
@@ -58,6 +59,15 @@ public class CommonParser {
     mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
     mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     return mapper.readValue(fileName, responseClass);
+  }
+
+  public static <T> T convertCollectionToCollectionPojo(
+          final TypeReference<T> responseClass, final List input) throws JsonProcessingException {
+    final ObjectMapper mapper = new ObjectMapper();
+    mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+    mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    return mapper.convertValue(input, responseClass);
   }
 
 }

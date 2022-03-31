@@ -1,22 +1,23 @@
-/*
+
 
 package com.unobank.servicehub.platform.commonlib.exception;
+
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.unobank.servicehub.platform.commonlib.constant.MambuConstants;
-import com.unobank.servicehub.platform.commonlib.dto.enums.error.BrankasError;
-import com.unobank.servicehub.platform.commonlib.dto.enums.error.ErrorResponse;
+import com.unobank.servicehub.platform.commonlib.dto.error.BrankasError;
+import com.unobank.servicehub.platform.commonlib.dto.error.Error;
+import com.unobank.servicehub.platform.commonlib.dto.error.ErrorResponse;
+import com.unobank.servicehub.platform.commonlib.dto.error.bayad.BayadError;
+import com.unobank.servicehub.platform.commonlib.dto.error.bayad.Details;
 import com.unobank.servicehub.platform.commonlib.dto.error.hps.HpsErrorResponse;
-import com.unobank.servicehub.platform.commonlib.dto.error.hps.bayad.BayadError;
-import com.unobank.servicehub.platform.commonlib.dto.error.hps.bayad.Details;
 import com.unobank.servicehub.platform.commonlib.dto.validation.ValidationErrorResponse;
 import com.unobank.servicehub.platform.commonlib.util.CommonParser;
 import com.unobank.servicehub.platform.commonlib.util.DateUtil;
-
 import lombok.extern.slf4j.Slf4j;
-
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-//import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -35,14 +35,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-*/
-/** @author ankur.goel *//*
+/** @author ankur.goel */
 
 
 @Slf4j
 @ControllerAdvice
-public class GlobalExceptionHandler extends  ResponseEntityExceptionHandler  {
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
   @Override
   protected ResponseEntity<Object> handleMethodArgumentNotValid(
@@ -199,4 +197,4 @@ public class GlobalExceptionHandler extends  ResponseEntityExceptionHandler  {
   }
 }
 
-*/
+
