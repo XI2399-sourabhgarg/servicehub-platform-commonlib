@@ -89,4 +89,17 @@ public class RestTemplateApiClient implements ApiClient  {
         String builderResult = builder + id;
         sslDisableRestTemplate.exchange(builderResult, HttpMethod.DELETE, entity, String.class);
     }
+
+    @Override
+    public <R> R patchOperation(URI uri, String id, HttpEntity<?> entity,Class<R> rclass, final String baseUrl) {
+
+        URI builder = UriComponentsBuilder.fromHttpUrl(baseUrl)
+                .path(uri.getPath())
+                .query(uri.getQuery())
+                .build()
+                .toUri();
+        String builderResult = builder + id;
+        ResponseEntity<R> respose = sslDisableRestTemplate.exchange(builderResult, HttpMethod.PATCH, entity, rclass);
+        return respose.getBody();
+    }
 }
