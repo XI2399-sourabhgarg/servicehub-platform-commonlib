@@ -67,5 +67,6 @@ public final class ApiPaths {
         public static final String BP_SELF_FUNDTRANSFER_V1 = BASE_PATH_V1 + "/sft/payOutInitiate";
         public static final String BP_DOMESTIC_FUNDTRANSFER_V1 = BASE_PATH_V1 + "/dft/payOutInitiate";
         public static final String BP_OTC_FUNDTRANSFER_V1 = BASE_PATH_V1 + "/dft/payinPosting";
+        public static final String BP_OTC_CASH_OUT = FUNDTRANSFER + "/dft/otc/v1/payOutPosting";
     }
 }
