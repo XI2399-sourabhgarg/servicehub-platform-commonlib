@@ -89,6 +89,7 @@ public final class ApiPaths {
         public static final String BAYAD_BILL_PAYMENT= "/v1/bayad/{billerCode}";
         public static final String PAYNAMICS_PAYMENT= "/v1/paynamics/deposit";
         public static final String BRANKAS_PAYMENT= "/v1/brankas/deposit";
+        public static final String TASK_CREATION="/v1/task/otc/{status}";
     }
 
     public static final class SearchAndValidationEntity {
