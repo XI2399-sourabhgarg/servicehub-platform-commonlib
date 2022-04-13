@@ -96,6 +96,7 @@ public final class ApiPaths {
     public static final class SearchAndValidationEntity {
         public static final String CLIENT_ENQUIRY = SEARCH + "/v1/client/enquiry";
         public static final String VALIDATE_PRODUCT = VALIDATION + "/v1/product";
+        public static final String SEARCH_DETAILS= "/v1/search/{searchType}";
 
     }
     public static final class GLPostingEntity {
