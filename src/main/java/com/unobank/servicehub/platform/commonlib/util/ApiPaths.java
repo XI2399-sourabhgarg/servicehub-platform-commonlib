@@ -10,6 +10,8 @@ public final class ApiPaths {
     public static final String FUNDTRANSFER = "payment";
     public static final String DEPOSIT = "deposit";
     public static final String ACCOUNT = "account";
+    public static final String SEARCH = "search";
+    public static final String VALIDATION = "validation";
 
     public static final class AuthEntity {
         public static final String BP_AUTH = "v1/auth";
@@ -81,5 +83,11 @@ public final class ApiPaths {
         public static final String ACCOUNT_DEPOSIT= "v1/deposit";
         public static final String APPLY_FEE= "v1/applyFee";
         public static final String WITHDRAWAL= "v1/withdrawal";
+    }
+
+    public static final class SearchAndValidationEntity {
+        public static final String CLIENT_ENQUIRY = SEARCH + "/v1/client/enquiry";
+        public static final String VALIDATE_PRODUCT = VALIDATION + "/v1/product";
+
     }
 }
