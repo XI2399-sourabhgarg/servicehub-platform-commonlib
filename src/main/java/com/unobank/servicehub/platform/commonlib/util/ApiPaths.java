@@ -18,7 +18,7 @@ public final class ApiPaths {
 
     public static final class OnBoardingEntity {
         public static final String BP_ONBOARDING = ONBOARDING + "/v1/onBoarding";
-        public static final String BP_ONBOARD_CLIENT = BP_ONBOARDING + "/client";
+        public static final String BP_ONBOARD_CLIENT = BP_ONBOARDING + "/v1/client";
         public static final String BP_ONBOARD_PRODUCT = BP_ONBOARDING + "/products";
         public static final String BP_ONBOARD_ACCOUNT = BP_ONBOARDING + "/account";
         public static final String BP_ONBOARDING_V1 = BASE_PATH_V1 + "/onBoarding";
@@ -34,6 +34,12 @@ public final class ApiPaths {
 
     public static final class AccountSearch {
         public static final String TF_ACCT_SEARCH = ACCOUNT + "/accountSearch";
+    }
+
+    public static final class AccountEntity {
+        public static final String ACCT_CREATE = ACCOUNT + "/v1/create";
+        public static final String ACCT_STATE_CHANGE = ACCOUNT + "/v1/stateChange";
+        public static final String ACCT_DELETE = ACCOUNT + "/v1/delete";
     }
 
     public static final class DepositAccountEntity {
