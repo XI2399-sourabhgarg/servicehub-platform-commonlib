@@ -10,6 +10,7 @@ public final class ApiPaths {
     public static final String FUNDTRANSFER = "payment";
     public static final String DEPOSIT = "deposit";
     public static final String ACCOUNT = "account";
+    public static final String DOWNSTREAM_FUNDTRANSFER = "payments/downstream";
     public static final String SEARCH = "search";
     public static final String VALIDATION = "validation";
 
@@ -80,9 +81,14 @@ public final class ApiPaths {
         public static final String BP_DOMESTIC_FUNDTRANSFER_V1 = BASE_PATH_V1 + "/dft/payOutInitiate";
         public static final String BP_OTC_FUNDTRANSFER_V1 = BASE_PATH_V1 + "/dft/payinPosting";
         public static final String BP_OTC_CASH_OUT = FUNDTRANSFER + "/dft/otc/v1/payOutPosting";
-        public static final String ACCOUNT_DEPOSIT= "v1/deposit";
-        public static final String APPLY_FEE= "v1/applyFee";
-        public static final String WITHDRAWAL= "v1/withdrawal";
+        public static final String ACCOUNT_DEPOSIT= "/v1/deposit";
+        public static final String APPLY_FEE= "/v1/applyFee";
+        public static final String WITHDRAWAL= "/v1/withdrawal";
+        public static final String UPDATE_TRANSACTION= "/v1/edit-transaction/{depositTransactionId}";
+        public static final String ADJUST_TRANSACTION="/v1/adjust/{transactionId}";
+        public static final String BAYAD_BILL_PAYMENT= "/v1/bayad/{billerCode}";
+        public static final String PAYNAMICS_PAYMENT= "/v1/paynamics/deposit";
+        public static final String BRANKAS_PAYMENT= "/v1/brankas/deposit";
     }
 
     public static final class SearchAndValidationEntity {
