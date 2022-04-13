@@ -13,6 +13,7 @@ public final class ApiPaths {
     public static final String DOWNSTREAM_FUNDTRANSFER = "payments/downstream";
     public static final String SEARCH = "search";
     public static final String VALIDATION = "validation";
+    public static final String GLEDGER = "glLedger";
 
     public static final class AuthEntity {
         public static final String BP_AUTH = "v1/auth";
@@ -97,4 +98,8 @@ public final class ApiPaths {
         public static final String VALIDATE_PRODUCT = VALIDATION + "/v1/product";
 
     }
+    public static final class GLPostingEntity {
+        public static final String APPLY_TAXES = "/v1/applyTaxes";
+    }
+
 }
