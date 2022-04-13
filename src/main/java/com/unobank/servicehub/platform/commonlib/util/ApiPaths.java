@@ -41,6 +41,10 @@ public final class ApiPaths {
         public static final String MAUTRITY_DEPOSTI_ACCOUNT = ACCOUNT + "/maturityDepositAccount";
         public static final String RDA_REDEEM_DEPOSIT = DEPOSIT + "/v1/fd-preClosure";
         public static final String ODA_OPEN_DEPOSIT_V1 = BASE_PATH_V1 + "/openDeposit";
+        public static final String APPLY_INTEREST = DEPOSIT + "/v1/applyInterest";
+        public static final String MATURITY_DEPOSIT_ACCOUNT = DEPOSIT + "/v1/maturityDeposit";
+        public static final String PRE_TERMINATION = DEPOSIT + "/v1/preTermination";
+        public static final String TASK_CREATION = DEPOSIT + "/v1/taskCreation";
     }
 
     public static final class InfoBipEntity {
