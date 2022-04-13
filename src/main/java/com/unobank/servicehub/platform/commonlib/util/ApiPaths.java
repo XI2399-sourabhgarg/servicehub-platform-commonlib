@@ -18,7 +18,7 @@ public final class ApiPaths {
 
     public static final class OnBoardingEntity {
         public static final String BP_ONBOARDING = ONBOARDING + "/v1/onBoarding";
-        public static final String BP_ONBOARD_CLIENT = BP_ONBOARDING + "/v1/client";
+        public static final String BP_ONBOARD_CLIENT = ONBOARDING + "/v1/client";
         public static final String BP_ONBOARD_PRODUCT = BP_ONBOARDING + "/products";
         public static final String BP_ONBOARD_ACCOUNT = BP_ONBOARDING + "/account";
         public static final String BP_ONBOARDING_V1 = BASE_PATH_V1 + "/onBoarding";
